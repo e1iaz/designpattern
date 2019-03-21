@@ -1,5 +1,8 @@
 import Adapter1.Print;
 import Adapter1.PrintBanner;
+import Template.AbstractDisplay;
+import Template.CharDisplay;
+import Template.StringDisplay;
 
 public class Main {
 
@@ -18,6 +21,7 @@ public class Main {
         }
         */
 
+        /*  Adapter
         Print p=new PrintBanner("Hello");
         p.printWeak();
         p.printStrong();
@@ -25,7 +29,14 @@ public class Main {
         Adapter2.Print p2=new Adapter2.PrintBanner("hello");
         p2.printWeak();
         p2.printString();
+        */
 
+        AbstractDisplay d1=new CharDisplay('H');
+        AbstractDisplay d2=new StringDisplay("hello,world.");
+        AbstractDisplay d3=new StringDisplay("你好");
+        d1.display();
+        d2.display();
+        d3.display();
     }
 
 }
