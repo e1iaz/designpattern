@@ -1,4 +1,4 @@
-package Adapter2;
+package Adapter.Inheritance;
 
 public class Banner {
 

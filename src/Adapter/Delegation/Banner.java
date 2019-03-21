@@ -1,4 +1,4 @@
-package Adapter1;
+package Adapter.Delegation;
 
 public class Banner {
 

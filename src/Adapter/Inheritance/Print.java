@@ -1,4 +1,4 @@
-package Adapter1;
+package Adapter.Inheritance;
 
 public interface Print {
 

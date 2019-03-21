@@ -1,5 +1,8 @@
-import Adapter1.Print;
-import Adapter1.PrintBanner;
+import Adapter.Inheritance.Print;
+import Adapter.Inheritance.PrintBanner;
+import Factory_Method.framework.Factory;
+import Factory_Method.framework.Product;
+import Factory_Method.idcard.IDCardFactory;
 import Template.AbstractDisplay;
 import Template.CharDisplay;
 import Template.StringDisplay;
@@ -26,17 +29,29 @@ public class Main {
         p.printWeak();
         p.printStrong();
 
-        Adapter2.Print p2=new Adapter2.PrintBanner("hello");
+        Adapter.Delegation.Print p2=new Adapter.Delegation.PrintBanner("hello");
         p2.printWeak();
         p2.printString();
         */
 
+        /* Template
         AbstractDisplay d1=new CharDisplay('H');
         AbstractDisplay d2=new StringDisplay("hello,world.");
         AbstractDisplay d3=new StringDisplay("你好");
         d1.display();
         d2.display();
         d3.display();
+        */
+
+        Factory factory=new IDCardFactory();
+        Product card1=factory.create("小明");
+        Product card2=factory.create("小红");
+        Product card3=factory.create("小刚");
+        card1.use();
+        card2.use();
+        card3.use();
+        System.out.println(((IDCardFactory) factory).getOwners());
+
     }
 
 }

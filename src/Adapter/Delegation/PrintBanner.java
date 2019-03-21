@@ -1,4 +1,4 @@
-package Adapter2;
+package Adapter.Delegation;
 
 public class PrintBanner extends Print {
 
