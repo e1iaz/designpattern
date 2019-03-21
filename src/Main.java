@@ -1,11 +1,11 @@
-import Iterator.Book;
-import Iterator.BookShelf;
-import Iterator.Iterator;
+import Adapter1.Print;
+import Adapter1.PrintBanner;
 
 public class Main {
 
     public static void main(String[] args){
 
+        /*  Iterator
         BookShelf bookShelf=new BookShelf(4);
         bookShelf.appendBook(new Book("Around"));
         bookShelf.appendBook(new Book("Bible"));
@@ -16,6 +16,15 @@ public class Main {
             Book book=(Book)iterator.next();
             System.out.println(book.getName());
         }
+        */
+
+        Print p=new PrintBanner("Hello");
+        p.printWeak();
+        p.printStrong();
+
+        Adapter2.Print p2=new Adapter2.PrintBanner("hello");
+        p2.printWeak();
+        p2.printString();
 
     }
 
