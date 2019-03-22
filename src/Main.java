@@ -12,6 +12,8 @@ import Observer.Observer;
 import Observer.RandomNumberGenerator;
 import Observer.DigitObserver;
 import Observer.GraphObserver;
+import Proxy.Printable;
+import Proxy.PrinterProxy;
 import Singleton.Singleton;
 import Strategy.Hand;
 import Strategy.Player;
@@ -136,12 +138,21 @@ public class Main {
         b4.show();
         */
 
+        /*  Observer
         NumberGenerator generator=new RandomNumberGenerator();
         Observer observer1=new DigitObserver();
         Observer observer2=new GraphObserver();
         generator.addObserver(observer1);
         generator.addObserver(observer2);
         generator.execute();
+        */
+
+        Printable p=new PrinterProxy("Alice");
+        System.out.println("现在的名字是"+p.getPrinterName()+"。");
+        p.setPrinterName("Bob");
+        System.out.println("现在的名字是"+p.getPrinterName()+"。");
+        p.print("Hello, world.");
+
     }
 
 }
