@@ -1,5 +1,9 @@
 import Adapter.Inheritance.Print;
 import Adapter.Inheritance.PrintBanner;
+import Decorator.Display;
+import Decorator.FullBorder;
+import Decorator.SideBorder;
+import Decorator.StringDisplay;
 import Factory_Method.framework.Factory;
 import Factory_Method.framework.Product;
 import Factory_Method.idcard.IDCardFactory;
@@ -10,11 +14,10 @@ import Strategy.ProbStrategy;
 import Strategy.WinningStrategy;
 import Template.AbstractDisplay;
 import Template.CharDisplay;
-import Template.StringDisplay;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         /*  Iterator
         BookShelf bookShelf=new BookShelf(4);
@@ -104,6 +107,29 @@ public class Main {
         System.out.println(player1.toString());
         System.out.println(player2.toString());
         */
+
+
+        Display b1 = new StringDisplay("Hello,world.");
+        Display b2 = new SideBorder(b1, '#');
+        Display b3 = new FullBorder(b2);
+        b1.show();
+        b2.show();
+        b3.show();
+        Display b4 =
+                new SideBorder(
+                        new FullBorder(
+                                new FullBorder(
+                                        new SideBorder(
+                                                new FullBorder(
+                                                        new StringDisplay("hello,world")
+                                                ),
+                                                '*'
+                                        )
+                                )
+                        ), '/'
+                );
+        b4.show();
+
 
     }
 
