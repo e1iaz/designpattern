@@ -7,6 +7,11 @@ import Decorator.StringDisplay;
 import Factory_Method.framework.Factory;
 import Factory_Method.framework.Product;
 import Factory_Method.idcard.IDCardFactory;
+import Observer.NumberGenerator;
+import Observer.Observer;
+import Observer.RandomNumberGenerator;
+import Observer.DigitObserver;
+import Observer.GraphObserver;
 import Singleton.Singleton;
 import Strategy.Hand;
 import Strategy.Player;
@@ -108,7 +113,7 @@ public class Main {
         System.out.println(player2.toString());
         */
 
-
+        /*  Decorator
         Display b1 = new StringDisplay("Hello,world.");
         Display b2 = new SideBorder(b1, '#');
         Display b3 = new FullBorder(b2);
@@ -129,8 +134,14 @@ public class Main {
                         ), '/'
                 );
         b4.show();
+        */
 
-
+        NumberGenerator generator=new RandomNumberGenerator();
+        Observer observer1=new DigitObserver();
+        Observer observer2=new GraphObserver();
+        generator.addObserver(observer1);
+        generator.addObserver(observer2);
+        generator.execute();
     }
 
 }
