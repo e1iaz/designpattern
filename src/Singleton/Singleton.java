@@ -2,8 +2,9 @@ package Singleton;
 
 public class Singleton {
 
-    private static Singleton singleton=new Singleton();
-    private Singleton(){
+    //饿汉模式
+    private static Singleton singleton = new Singleton();
+    private Singleton() {
         System.out.println("生成一个实例");
     }
 
