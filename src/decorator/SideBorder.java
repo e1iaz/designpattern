@@ -1,4 +1,4 @@
-package Decorator;
+package decorator;
 
 public class SideBorder extends Border {
 
