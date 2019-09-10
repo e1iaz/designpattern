@@ -1,3 +1,6 @@
+import factorymethod.factory.Animal;
+import factorymethod.factory.AnimalFactory;
+import factorymethod.factory.DogFactory;
 import proxy.Printable;
 import proxy.PrinterProxy;
 
@@ -123,6 +126,10 @@ public class Main {
 //        p.setPrinterName("Bob");
 //        System.out.println("现在的名字是" + p.getPrinterName() + "。");
 //        p.print("Hello, world.");
+
+        AnimalFactory f = new DogFactory();
+        Animal a = f.createAnimal();
+        a.eat();
 
     }
 

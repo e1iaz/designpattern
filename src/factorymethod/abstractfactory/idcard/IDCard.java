@@ -1,6 +1,6 @@
-package factorymethod.idcard;
+package factorymethod.abstractfactory.idcard;
 
-import factorymethod.framework.Product;
+import factorymethod.abstractfactory.framework.Product;
 
 public class IDCard extends Product {
 

@@ -1,4 +1,4 @@
-package factorymethod.framework;
+package factorymethod.abstractfactory.framework;
 
 public abstract class Factory {
 
