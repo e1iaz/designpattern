@@ -1,3 +1,6 @@
+import builder.KFCWaiter;
+import builder.Meal;
+import builder.MealA;
 import factorymethod.factory.Animal;
 import factorymethod.factory.AnimalFactory;
 import factorymethod.factory.DogFactory;
@@ -136,21 +139,27 @@ public class Main {
 //        Animal a = f.createAnimal();
 //        a.eat();
 
-        Manager manager = new Manager();
-        UnderlinePen upen = new UnderlinePen('~');
-        MessageBox mBox = new MessageBox('*');
-        MessageBox sBox = new MessageBox('/');
-        manager.register("strong message", upen);
-        manager.register("warning box", mBox);
-        manager.register("slash box", sBox);
+//        prototype
+//        Manager manager = new Manager();
+//        UnderlinePen upen = new UnderlinePen('~');
+//        MessageBox mBox = new MessageBox('*');
+//        MessageBox sBox = new MessageBox('/');
+//        manager.register("strong message", upen);
+//        manager.register("warning box", mBox);
+//        manager.register("slash box", sBox);
+//
+//        Product p1 = manager.create("strong message");
+//        p1.use("Hello, world.");
+//        Product p2 = manager.create("warning box");
+//        p2.use("Hello, world.");
+//        Product p3 = manager.create("slash box");
+//        p3.use("Hello, world.");
 
-        Product p1 = manager.create("strong message");
-        p1.use("Hello, world.");
-        Product p2 = manager.create("warning box");
-        p2.use("Hello, world.");
-        Product p3 = manager.create("slash box");
-        p3.use("Hello, world.");
-
+//        builder
+        MealA a = new MealA();
+        KFCWaiter waiter = new KFCWaiter(a);
+        Meal mealA = waiter.construct();
+        System.out.println("套餐A = " + mealA.getFood() + " + " + mealA.getDrink());
     }
 
 }
