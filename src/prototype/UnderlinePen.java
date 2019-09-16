@@ -17,8 +17,7 @@ public class UnderlinePen implements Product {
     public void use(String s) {
         int length = s.getBytes().length;
         System.out.println("\"" + s + "\"");
-        System.out.print("");
-        for (int i = 0; i < length; ++i) {
+        for (int i = 0; i < length + 2; ++i) {
             System.out.print(ulchar);
         }
         System.out.println("");
